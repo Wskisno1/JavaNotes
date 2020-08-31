@@ -103,6 +103,7 @@ public class UserService {
 ### 02.说说你对spring的AOP机制的理解？
 
 ​		AOP(Aspect-Oriented Programming:面向切面编程)能够将那些与业务无关，却为业务模块所共同调用的逻辑或责任(例如事务处理、日志管理、权限控制等)封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可拓展性和可维护性。
+
 ----------补充------------------------------------------
 切面、连接点、通知
 
@@ -271,9 +272,27 @@ ThreadLocal中(推荐的一种方式)
 
 **事务的实现原理**：如果说你加了一个@Transactional注解，此时spring就会使用AOP的思想，对你的这个方法在执行之前去开启事务，执行完毕之后，根据你方法是否报错，来决定回滚还是提交事务。
 
+```java
+@Transactional(propagation=Propagation.REQUIRED)
+public void methodA(){
+methodB()
+//do something
+}
+
+```
+
+```java
+@Transactional(propagation=Propagation.REQUIRED)
+public void methodB(){
+//do something
+}
+
+```
+
 **支持当前事务的情况:**
 
 ●TransactionDefinition.PROPAGATION_ REQUIRED: 如果当前存在事务， 则加入该事务;如果当前没有事务，则创建一个新的事务。
+//B事务中出现失败后，A事务同样回滚。
 
 ●TransactionDefinition.PROPAGATION_ SUPPORTS: 如果当前存在事务，则加入该事务;如果当前没有事务，则以非事务的方式继续运行。
 
