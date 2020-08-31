@@ -104,6 +104,19 @@ public class UserService {
 
 ​		AOP(Aspect-Oriented Programming:面向切面编程)能够将那些与业务无关，却为业务模块所共同调用的逻辑或责任(例如事务处理、日志管理、权限控制等)封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可拓展性和可维护性。
 
+切面、连接点、通知
+
+Advice
+Advice行内很多人都定义成了通知，但是我总觉得有点勉强。所谓的Advice其实就是定义了Aop何时被调用，确实有种通知的感觉，何时调用其实也不过以下几种：
+
+Before 在方法被调用之前调用
+After 在方法完成之后调用
+After-returning 在方法成功执行之后调用
+After-throwing 在方法抛出异常之后调用
+Around 在被通知的方法调用之前和调用之后调用
+
+
+
 **AOP 使用场景** : 日志系统 、安全统一效验
 
 ​		Spring AOP就是基于动态代理的，如果要代理的对象，实现了某个接口，那么SpringAOP会使用JDK Proxy,去创建代理对象，而对于没有实现接口的对象，就无法使用JDKProxy去进行代理了，这时候Spring AOP会使用Cglib，这时候Spring AOP会使用Cglib生成一个被代理对象的子类来作为代理，如下图所示:
