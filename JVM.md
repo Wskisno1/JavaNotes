@@ -1,3 +1,5 @@
+### https://www.cnblogs.com/chanshuyi/p/jvm_serial_10_gc_type.html
+### https://mp.weixin.qq.com/s?__biz=MzI4NDY5Mjc1Mg==&mid=2247483952&idx=1&sn=ea12792a9b7c67baddfaf425d8272d33&chksm=ebf6da4fdc815359869107a4acd15538b3596ba006b4005b216688b69372650dbd18c0184643&scene=21#wechat_redirect
 ### 01.JVM中有哪几块内存区域？Java 8 之后对内存分代做了什么改进？
 
 **JDK1.8之前：**
