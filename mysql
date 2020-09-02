@@ -1,4 +1,4 @@
-###myisam与Innodb
+### myisam与Innodb
 
 1. InnoDB 支持事务，MyISAM 不支持事务。这是 MySQL 将默认存储引擎从 MyISAM 变成 InnoDB 的重要原因之一；
 2. InnoDB 支持外键，而 MyISAM 不支持。对一个包含外键的 InnoDB 表转为 MYISAM 会失败；  
@@ -9,7 +9,7 @@
 5. InnoDB 最小的锁粒度是行锁，MyISAM 最小的锁粒度是表锁。一个更新语句会锁住整张表，导致其他查询和更新都会被阻塞，因此并发访问受限。
 这也是 MySQL 将默认存储引擎从 MyISAM 变成 InnoDB 的重要原因之一；
 
-###最左前缀匹配原则
+### 最左前缀匹配原则
 create index(shop_id,product_id,gmt_create)
 (1)全列匹配
 where shop_id=1 and product_id=1 and gmt_create=“2018-01-01”
