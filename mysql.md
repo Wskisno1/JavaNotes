@@ -13,8 +13,10 @@
 create index(shop_id,product_id,gmt_create)
 (1)全列匹配
 where shop_id=1 and product_id=1 and gmt_create=“2018-01-01”
+
 （2）最左前缀匹配
 where shop_id=1 and product_id=1 
+
 (3)最左前缀匹配了，但是中间某个值没匹配
 where shop_id=1 and gmt_create=“2018-01-01”
 gmt_create不会走索引
