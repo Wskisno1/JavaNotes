@@ -133,6 +133,17 @@ JDK1.8以及之后，做了一些优化和改进，锁粒度的细化。
 
 综上所述，JDK1.8之后，只有对相同位置的元素操作，才会加锁实行串行化操作，对不同位置进行操作是并发执行的()
 
+------------------------------------------------------------------------------------------------------------
+###  hashmap与hashtable的区别
+
+1.Hashtable是继承了Dictionary类，HashMap是继承AbstractMap这个类
+2.Hashtable中方法是同步的，HashMap中的方法是非同步的。
+3.Hashtable中，key和value都不允许出现null值，Hashmap中，null可以作为key，value。
+4.哈希值的计算方式不同。HashTable直接使用对象的hashcode，hashmap会使用高16位&低16位重新计算。
+5.HashTable的数组初始大小是11，扩容是old*2+1. HashMap默认大小是16，扩容是old*2.
+
+-------------------------------------------------------------------------------------------------------------
+
 ###  05. 对JDK中的AQS了解吗？AQS的实现原理是什么？
 
 多线程同时访问一个共享数据可以用sychronized，CAS，ConcurrentHashMap，同时也可以用本小节学的Lock，他的底层基于AQS技术。Abstract Queued Synchronizer简称为AQS，抽象队列同步器。
